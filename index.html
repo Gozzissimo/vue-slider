@@ -14,13 +14,13 @@
 <body>
   <div id="app" class="container">
     <div class="slider-wrapper">
-      <div class="prev">
+      <div @click="prev" class="prev">
         <i class="fas fa-angle-left"></i>
       </div>
-      <div class="images">
-        <img :src="images/image1.jpg" alt="">
+      <div class="image">
+        <img :src="`images/${images[counter]}`" alt="">
       </div>
-      <div class="next">
+      <div @click="next" class="next">
         <i class="fas fa-angle-right"></i>
       </div>
       <div class="nav">
