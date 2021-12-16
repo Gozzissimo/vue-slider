@@ -36,7 +36,7 @@ const app = new Vue (
             },
 
             autoSlider: setInterval(function(){
-                this.next();
+                console.log('test');
                 }, 3000)
         }     
     }
