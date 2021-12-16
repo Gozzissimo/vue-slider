@@ -20,6 +20,7 @@ const app = new Vue (
         },
 
         methods: {
+
             next() {
                 this.counter += 1;
                 if (this.counter > this.images.length - 1) {
@@ -32,8 +33,11 @@ const app = new Vue (
                 if (this.counter < 1) {
                     this.counter = this.images.length - 1;
                 }
-            }
-        }
+            },
 
+            autoSlider: setInterval(function(){
+                this.next();
+                }, 3000)
+        }     
     }
 );
