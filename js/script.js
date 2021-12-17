@@ -16,7 +16,8 @@ const app = new Vue (
                 'image3.jpg',
                 'image4.jpg'
             ],
-            counter: 0
+            counter: 0,
+            autoPlay: null
         },
 
         methods: {
@@ -35,9 +36,25 @@ const app = new Vue (
                 }
             },
 
-            autoSlider: setInterval(function(){
-                console.log('test');
-                }, 3000)
+            pointClick(index) {
+                this.counter = index;
+            },
+
+            
+            stop() {
+                clearInterval(this.autoPlay);
+                this.autoPlay = null
+            },
+            
+            restart() {
+                this.autoPLay = setInterval(() => {
+                    this.next();
+                }, 3000);
+            },
+
+            mounted() {
+                this.autoPlay();
+            }
         }     
     }
 );
